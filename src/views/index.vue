@@ -1,33 +1,47 @@
 <template>
-  <div>
+  <div id="layOut">
     <el-container>
-      <el-header></el-header>
+      <el-header>- HEADER -</el-header>
       
       <el-container>
-        <el-aside></el-aside>
-        <el-main></el-main>
+        <el-aside>
+          <sideBar></sideBar>
+        </el-aside>
+        
+        <el-main>
+          <appMain></appMain>
+        </el-main>
       </el-container>
 
-      <el-footer></el-footer>
+      <el-footer>- FOOTER -</el-footer>
     </el-container>
   </div>
 </template>
 
 <script>
+import sideBar from './sideBar'
+import appMain from './appMain'
+
 export default {
-  data () {
-    return {
-    }
+  components: {
+    sideBar,
+    appMain
   }
 }
 </script>
 
 <style scoped>
+#layOut, .el-container {
+  width: 100%;
+  height: 100%;
+}
+
 .el-header {
     background-color: #0593D3; /*E4EDE6,E6EFE0,66b1ff,409EFF*/
     color: #FFFFFF;
     text-align: left;
     line-height: 60px;
+    width: 100%;
     font-size: 26px;
     margin: 6px 0 5px 0;
 }
@@ -37,6 +51,7 @@ export default {
     color: #FFFFFF;
     text-align: center;
     padding: 10px 0;
+    width: 100%;
     font-size: 12px;
     margin: 5px 0 6px 0;
 }
@@ -45,9 +60,9 @@ export default {
     background-color: #D3DCE6; /*D3DCE6*/
     color: #333;
     text-align: left;
-    /*line-height: 200px;*/
-    margin: 0 5px 0 5px; 
-    overflow: hidden;
+    margin: 0 5px 0 5px;
+    height: 100%; 
+    /*overflow: hidden;*/
 }
   
 .el-main {
@@ -55,26 +70,8 @@ export default {
     color: #333;
     text-align: left;
     margin: 0 10px 0 0; 
-    flex:1;
-}
-  
-/*body > .el-container {
-    margin-bottom: 40px;
-}*/
-  
-.el-container:nth-child(5) .el-aside,
-.el-container:nth-child(6) .el-aside {
-    line-height: 260px;
-}
-.el-container:nth-child(7) .el-aside {
-    line-height: 320px;
-}
-
-#aside {
     height: 100%;
-}
-
-#footer {
+    flex:1;
 }
     
 .el-menu {
