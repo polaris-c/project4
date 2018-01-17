@@ -1,104 +1,31 @@
 <template>
   <div id="sideBar">
-    <el-menu default-active="1" class="el-menu-vertical-demo" 
+    <el-menu router default-active="1" class="el-menu-vertical-demo" 
         @open="handleOpen" @close="handleClose" 
         background-color="#EFEFEF" active-text-color="#0593D3">
+        <!-- :router="true" -->
 
         <el-submenu index="1">
-            <template slot="title">
+            <template slot="title">                                                                            
                 <i class="el-icon-menu" aria-hidden="true"></i>
-                <span>功能一</span>
+                <span>Function-A</span>
             </template>
 
-            <!-- <router-link to = "/search" > -->
-                <el-menu-item index="/">
-                    <i class="el-icon-setting" aria-hidden="true"></i>
-                    搜索
-                </el-menu-item>
-            <!-- </router-link> -->
+            <el-menu-item index="/functionA/form">
+                <i class="el-icon-setting" aria-hidden="true"></i>
+                <span>A-1</span>
+            </el-menu-item>
 
-            <!-- <router-link to = "/add" > -->
-                <el-menu-item index="/">
-                    <i class="el-icon-setting"></i>
-                    <span>新增</span>
-                </el-menu-item>
-            <!-- </router-link> -->
-
-            <!-- <router-link to = "/check" > -->
-                <el-menu-item index="/">
-                    <i class="el-icon-setting"></i>
-                    <span>查看</span>
-                </el-menu-item>
-            <!-- </router-link> -->
+            <el-menu-item index="/functionA/table">
+                <i class="el-icon-setting"></i>
+                <span>A-2</span>
+            </el-menu-item>
         </el-submenu>
 
-        <el-menu-item index="2">
+        <el-menu-item index="/functionB/table">
             <i class="el-icon-menu"></i>
-            <span slot="title">功能二</span>
+            <span slot="title">Function-B</span>
         </el-menu-item>
-
-        <el-submenu index="3">
-        	<template slot="title">
-        	<i class="el-icon-menu"></i>
-            <span slot="title">功能三</span>
-            </template>
-        </el-submenu>
-
-        <el-submenu index="1">
-            <template slot="title">
-                <i class="el-icon-menu" aria-hidden="true"></i>
-                <span>功能一</span>
-            </template>
-
-            <!-- <router-link to = "/search" > -->
-                <el-menu-item index="/">
-                    <i class="el-icon-setting" aria-hidden="true"></i>
-                    搜索
-                </el-menu-item>
-            <!-- </router-link> -->
-
-            <!-- <router-link to = "/add" > -->
-                <el-menu-item index="/">
-                    <i class="el-icon-setting"></i>
-                    <span>新增</span>
-                </el-menu-item>
-            <!-- </router-link> -->
-
-            <!-- <router-link to = "/check" > -->
-                <el-menu-item index="/">
-                    <i class="el-icon-setting"></i>
-                    <span>查看</span>
-                </el-menu-item>
-            <!-- </router-link> -->
-        </el-submenu>
-
-        <el-submenu index="1">
-            <template slot="title">
-                <i class="el-icon-menu" aria-hidden="true"></i>
-                <span>功能一</span>
-            </template>
-
-            <!-- <router-link to = "/search" > -->
-                <el-menu-item index="/">
-                    <i class="el-icon-setting" aria-hidden="true"></i>
-                    搜索
-                </el-menu-item>
-            <!-- </router-link> -->
-
-            <!-- <router-link to = "/add" > -->
-                <el-menu-item index="/">
-                    <i class="el-icon-setting"></i>
-                    <span>新增</span>
-                </el-menu-item>
-            <!-- </router-link> -->
-
-            <!-- <router-link to = "/check" > -->
-                <el-menu-item index="/">
-                    <i class="el-icon-setting"></i>
-                    <span>查看</span>
-                </el-menu-item>
-            <!-- </router-link> -->
-        </el-submenu>
                             
     </el-menu>
   </div>

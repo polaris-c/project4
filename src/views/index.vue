@@ -1,7 +1,9 @@
 <template>
   <div id="layOut">
     <el-container>
-      <el-header>- HEADER -</el-header>
+      <el-header>
+        <topBar></topBar>
+      </el-header>
       
       <el-container>
         <el-aside>
@@ -13,19 +15,25 @@
         </el-main>
       </el-container>
 
-      <el-footer>- FOOTER -</el-footer>
+      <el-footer>
+        <bottomBar></bottomBar> 
+      </el-footer>
     </el-container>
   </div>
 </template>
 
 <script>
+import topBar from './topBar' 
 import sideBar from './sideBar'
 import appMain from './appMain'
+import bottomBar from './bottomBar'
 
 export default {
   components: {
     sideBar,
-    appMain
+    appMain,
+    topBar,
+    bottomBar
   }
 }
 </script>
@@ -42,7 +50,7 @@ export default {
     text-align: left;
     line-height: 60px;
     width: 100%;
-    font-size: 26px;
+    font-size: 32px;
     margin: 6px 0 5px 0;
 }
 

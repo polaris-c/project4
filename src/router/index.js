@@ -2,8 +2,15 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
 import index from '../views/index'
+
 import about from '../views/about'
-import user from '../views/user'
+
+import user from '../views/User/user'
+
+import tableA from '../views/functionA/table'
+import formA from '../views/functionA/form'
+
+import tableB from '../views/functionB/table'
 
 Vue.use(Router)
 
@@ -15,23 +22,52 @@ export default new Router({
       hidden: true
     },
     {
-      path: '/hello',
-      name: 'HelloWorld',
-      component: HelloWorld
-    },
-    {
       path: '/index',
       name: '',
       component: index
     },
     {
-      path: '/about',
-      name: '',
-      component: about
+      path: '/hello',
+      name: 'HelloWorld',
+      component: HelloWorld
     },
     {
-      path: './user/:id',
-      component: user
-    }
+      path: '/',
+      name: '',
+      redirect: 'noredirect',
+      component: index,
+      children: [
+        { path: 'about', component: about, name: '' }
+      ]
+    },
+    {
+      path: '/User',
+      name: '',
+      redirect: 'noredirect',
+      component: index,
+      children: [
+        { path: 'user', component: user, name: '' }
+      ]
+    },
+    {
+      path: '/functionA',
+      name: '',
+      redirect: 'noredirect',
+      component: index,
+      children: [
+        { path: 'table', component: tableA, name: '' },
+        { path: 'form', component: formA, name: '' }
+      ]
+    },
+    {
+      path: '/functionB',
+      name: '',
+      redirect: 'noredirect',
+      component: index,
+      children: [
+        { path: 'table', component: tableB, name: '' }
+      ]
+    },
+    { path: '*', redirect: '/index', hidden: true }
   ]
 })

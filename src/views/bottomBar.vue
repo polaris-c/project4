@@ -1,7 +1,7 @@
 <template>
   <div>
-    Hello 
-      About this system~
+    - Footer -
+    2018
   </div>
 </template>
 

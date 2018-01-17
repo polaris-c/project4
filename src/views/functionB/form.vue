@@ -1,15 +1,13 @@
 <template>
   <div>
-    Hello 
-      About this system~
+    form
   </div>
 </template>
 
 <script>
 export default {
-  data () {
-    return {
-    }
+  mounted() {
+    console.log('form!');
   }
 }
 </script>

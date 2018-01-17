@@ -1,13 +1,13 @@
 <template>
-  <div class="hello">
-    User: {{ $route.params.id }}
+  <div>
+    form
   </div>
 </template>
 
 <script>
 export default {
   mounted() {
-    console.log(this.$route.params.id);
+    console.log('form!');
   }
 }
 </script>
