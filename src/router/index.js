@@ -7,8 +7,12 @@ import about from '../views/about'
 
 import user from '../views/User/user'
 
-import tableA from '../views/functionA/table'
-import formA from '../views/functionA/form'
+import A1table from '../views/functionA/A1table'
+import A1add from '../views/functionA/A1add'
+import A1edit from '../views/functionA/A1edit'
+import A2table from '../views/functionA/A2table'
+import A2add from '../views/functionA/A2add'
+import A2edit from '../views/functionA/A2edit'
 
 import tableB from '../views/functionB/table'
 
@@ -55,8 +59,12 @@ export default new Router({
       redirect: 'noredirect',
       component: index,
       children: [
-        { path: 'table', component: tableA, name: '' },
-        { path: 'form', component: formA, name: '' }
+        { path: 'A1table', component: A1table, name: '' },
+        { path: 'A1add', component: A1add, name: '' },
+        { path: 'A1edit', component: A1edit, name: '' },
+        { path: 'A2table', component: A2table, name: '' },
+        { path: 'A2add', component: A2add, name: '' },
+        { path: 'A2edit', component: A2edit, name: '' }
       ]
     },
     {

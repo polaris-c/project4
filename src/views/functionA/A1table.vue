@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <div>A-2 Datebase table</div>
+  <div class="datebaseTable">
+    <div>A-1 Datebase table</div>
     
     <div style="margin-top: 15px;">
       <el-row type="flex" class="row-bg" justify="space-between">
@@ -16,34 +16,26 @@
       </el-row>
     </div>
 
-    <div style="margin-top: 30px;">
-    <el-table :data="tableData" style="width: 100%;" border stripe>
-      <el-table-column label="日期" width="180">
-      <template slot-scope="scope">
-        <i class="el-icon-time"></i>
-        <span style="margin-left: 10px">{{ scope.row.date }}</span>
-      </template>
-      </el-table-column>
+    <div style="margin-top: 15px;">
+      <el-table :data="tableData" style="width: 100%" border stripe>
+                <el-table-column label="日期" width="180"> 
+                    <template slot-scope="scope">
+                        <i class="el-icon-time"></i>
+                        <span style="margin-left: 10px">{{ scope.row.date }}</span>
+                    </template>
+                </el-table-column>
+        
+                <el-table-column label="编号" prop="name"></el-table-column>
+                <el-table-column label="地点" prop="address"></el-table-column>
 
-    <el-table-column label="姓名" width="180">
-      <template slot-scope="scope">
-        <el-popover trigger="hover" placement="top">
-          <p>姓名: {{ scope.row.name }}</p>
-          <p>住址: {{ scope.row.address }}</p>
-          <div slot="reference" class="name-wrapper">
-            <el-tag size="medium">{{ scope.row.name }}</el-tag>
-          </div>
-        </el-popover>
-      </template>
-    </el-table-column>
-
-    <el-table-column label="操作">
-      <template slot-scope="scope">
-        <el-button size="mini" @click="handleEdit(scope.$index, scope.row)">编 辑</el-button>
-        <el-button size="mini" type="danger" @click="handleDelete(scope.$index, scope.row)">删 除</el-button>
-      </template>
-    </el-table-column>
-    </el-table>
+                <el-table-column label="操作" >
+                    <template slot-scope="scope">
+                        <el-button size="mini" @click="" style="margin-left: 10px;">详细</el-button>
+                        <el-button size="mini" @click="handleEdit(scope.$index, scope.row)">编辑</el-button>
+                        <el-button size="mini" type="danger" @click="handleDelete(scope.$index, scope.row)">删除</el-button>
+                    </template>
+                </el-table-column>
+      </el-table>
     </div>
   </div>
 </template>
@@ -79,12 +71,12 @@ export default {
     },
     methods: {
       handleAdd() {
-        this.$router.push('/functionA/form'); 
+        this.$router.push('/functionA/A1add'); 
       },
       handleEdit(index, row) {
 
         console.log(index, row);
-        this.$router.push('/functionA/form'); 
+        this.$router.push('/functionA/A1edit'); 
       },
       handleDelete(index, row) {
         console.log(index, row);
@@ -96,5 +88,9 @@ export default {
 <style scoped>
 .handleAdd {
     /*background-color: #0593D3;*/
+}
+.datebaseTable {
+    width: 80%;
+    margin: auto;
 }
 </style>

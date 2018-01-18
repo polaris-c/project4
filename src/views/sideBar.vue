@@ -11,12 +11,12 @@
                 <span>Function-A</span>
             </template>
 
-            <el-menu-item index="/functionA/form">
+            <el-menu-item index="/functionA/A1table">
                 <i class="el-icon-setting" aria-hidden="true"></i>
                 <span>A-1</span>
             </el-menu-item>
 
-            <el-menu-item index="/functionA/table">
+            <el-menu-item index="/functionA/A2table">
                 <i class="el-icon-setting"></i>
                 <span>A-2</span>
             </el-menu-item>
