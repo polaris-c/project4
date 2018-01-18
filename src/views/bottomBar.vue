@@ -1,0 +1,19 @@
+<template>
+  <div>
+    - Footer -
+    2018
+  </div>
+</template>
+
+<script>
+export default {
+  data () {
+    return {
+    }
+  }
+}
+</script>
+
+<style scoped>
+
+</style>
