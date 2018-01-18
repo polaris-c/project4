@@ -1,7 +1,7 @@
 <template>
   <div>
-    Hello 
-      About this system~
+    <h3>Hello</h3>     
+    <p>About this system~</p>
   </div>
 </template>
 

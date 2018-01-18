@@ -3,7 +3,7 @@ import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
 import index from '../views/index'
 
-import about from '../views/about'
+import guide from '../views/guide'
 
 import user from '../views/User/user'
 
@@ -22,8 +22,12 @@ export default new Router({
   routes: [
     {
       path: '/',
-      redirect: '/index',
-      hidden: true
+      name: '',
+      redirect: '/guide',
+      component: index,
+      children: [
+        { path: 'guide', component: guide, name: '' }
+      ]
     },
     {
       path: '/index',
@@ -36,12 +40,12 @@ export default new Router({
       component: HelloWorld
     },
     {
-      path: '/',
+      path: '*',
       name: '',
-      redirect: 'noredirect',
+      redirect: '/guide',
       component: index,
       children: [
-        { path: 'about', component: about, name: '' }
+        { path: 'guide', component: guide, name: '' }
       ]
     },
     {
@@ -75,7 +79,7 @@ export default new Router({
       children: [
         { path: 'table', component: tableB, name: '' }
       ]
-    },
-    { path: '*', redirect: '/index', hidden: true }
+    }//,
+    // { path: '*', redirect: '/index', hidden: true }
   ]
 })

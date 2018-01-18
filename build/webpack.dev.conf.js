@@ -34,7 +34,16 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     proxy: config.dev.proxyTable,
     quiet: true, // necessary for FriendlyErrorsPlugin
     watchOptions: {
-      poll: config.dev.poll,
+      poll: config.dev.poll
+    },
+    // 增加路由规则
+    before (app) {
+      app.get('/api/data', (req, res) => {
+        res.json({
+          code: 1001,
+          data: data
+        })
+      })
     }
   },
   plugins: [
@@ -49,9 +58,19 @@ const devWebpackConfig = merge(baseWebpackConfig, {
       filename: 'index.html',
       template: 'index.html',
       inject: true
-    }),
+    })
   ]
 })
+
+// 增加express
+const express = require('express')
+const app = express()
+// 加载本地数据文件
+var appData = require('../static/Atable.json') // 获取json对象
+var data = appData.data   // 获取字段名
+var apiRoutes = express.Router()
+// 为了统一管理api接口，我们在要请求的路由前边都加上‘/api’来表明这个路径是专门用来提供api数据的
+app.use('/api', apiRoutes)
 
 module.exports = new Promise((resolve, reject) => {
   portfinder.basePort = process.env.PORT || config.dev.port
@@ -67,7 +86,7 @@ module.exports = new Promise((resolve, reject) => {
       // Add FriendlyErrorsPlugin
       devWebpackConfig.plugins.push(new FriendlyErrorsPlugin({
         compilationSuccessInfo: {
-          messages: [`Your application is running here: http://${devWebpackConfig.devServer.host}:${port}`],
+          messages: [`Your application is running here: http://${devWebpackConfig.devServer.host}:${port}`]
         },
         onErrors: config.dev.notifyOnErrors
         ? utils.createNotifierCallback()

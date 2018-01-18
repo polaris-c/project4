@@ -43,10 +43,25 @@
 <script>
 export default {
     data() {
+      let vm = this
+      this.$http.get('/api/data').then(
+          (response) => {
+              console.log('response is OK:')
+              console.log(response);
+              console.log(response.body.data);
+              this.Atable = response.body.data;
+          }, 
+          response => {
+              console.log('response is error:')
+              console.log(response);
+          }
+      );
       return {
         searchInput: '',
         flag: false,
-        tableData: [{
+        tableData: 
+        // this.Atable.tableData
+        [{
           date: '2016-05-02',
           name: '1',
           address: '上海市普陀区金沙江路 1518 弄'
