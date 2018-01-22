@@ -98,7 +98,8 @@ export default {
       	}
 	},
     mounted() {
-        console.log('form!');
+        console.log('A1-edit!')
+        console.log('Vuex store:', this.$store.state.item)
     }
 }
 </script>

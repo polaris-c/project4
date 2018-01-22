@@ -81,6 +81,7 @@ export default {
         console.log('scope.$index:', index)
         console.log('scope.row:', row)
         console.log('scope.row.id:', row.id)
+        this.$store.commit('tableToForm', row)
 
         this.$router.push('/functionA/A1edit') 
       },
