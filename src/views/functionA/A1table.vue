@@ -4,6 +4,7 @@
     
     <div style="margin-top: 15px;">
       <el-row type="flex" class="row-bg" justify="space-between">
+
         <!-- 搜索栏 -->
         <el-col :span="9">
         <el-input placeholder="请输入内容" v-model="searchInput" class="">
@@ -13,7 +14,7 @@
         
         <!-- 新增 -->
         <el-col :span="3">
-          <el-button class="handleAdd" type="primary" @click="handleAdd" :disabled="flag">新 增</el-button>
+          <el-button class="handleAdd" type="primary" @click="handleAdd" :disabled="flag" round>新 增</el-button>
         </el-col>
       </el-row>
     </div>
@@ -22,12 +23,11 @@
     <div style="margin-top: 15px;">
       <el-table :data="tableData" style="width: 100%" border stripe highlight-current-row>
         <el-table-column label="日期" prop="date" width="180"></el-table-column>
-          <el-table-column label="编号" prop="name"></el-table-column>
-          <el-table-column label="地点" prop="address"></el-table-column>
-
+        <el-table-column label="编号" prop="name"></el-table-column>
+        <el-table-column label="地点" prop="address"></el-table-column>
         <el-table-column label="操作" >
           <template slot-scope="scope">
-            <el-button size="mini" @click="" style="margin-left: 10px;">详细</el-button>
+            <el-button size="mini" @click="showDetails(scope.$index, scope.row)" style="margin-left: 10px;">详细</el-button>
             <el-button size="mini" @click="handleEdit(scope.$index, scope.row)">编辑</el-button>
             <el-button size="mini" type="danger" @click="handleDelete(scope.$index, scope.row)">删除</el-button>
           </template>
@@ -71,20 +71,29 @@ export default {
           (response) => {
             console.log('response is error:', response)
           }
-      );
-
+        );
       },
+
       handleAdd() {
         this.$router.push('/functionA/A1add')
       },
+
+      showDetails(index, row) {
+        console.log('showDetails $index:', index)
+        console.log('showDetails row:', row)
+        this.$store.commit('selectTableItem', row)
+
+        this.$router.push('/functionA/A1details') 
+      },
+
       handleEdit(index, row) {
-        console.log('scope.$index:', index)
-        console.log('scope.row:', row)
-        console.log('scope.row.id:', row.id)
-        this.$store.commit('tableToForm', row)
+        console.log('handleEdit $index:', index)
+        console.log('handleEdit row:', row)
+        this.$store.commit('selectTableItem', row)
 
         this.$router.push('/functionA/A1edit') 
       },
+
       handleDelete(index, row) {
         console.log(index, row)
       }
