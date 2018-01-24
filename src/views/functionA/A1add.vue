@@ -67,7 +67,7 @@
                 <!-- <el-row type="flex"> -->
                     <el-form-item>
                         <el-button type="primary" @click="onSubmit">立即创建</el-button>
-                        <el-button>取消</el-button>
+                        <el-button @click="goBack">取 消</el-button>
                     </el-form-item>
                 <!-- </el-row> -->
             </el-form>
@@ -95,7 +95,11 @@ export default {
 	methods: {
 		onSubmit() {
         	console.log('submit!');
-      	}
+      	},
+        goBack() {
+            let vm = this
+            vm.$router.go(-1)
+        },
 	},
     mounted() {
         console.log('form!');

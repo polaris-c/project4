@@ -10,6 +10,7 @@ import user from '../views/User/user'
 import A1table from '../views/functionA/A1table'
 import A1add from '../views/functionA/A1add'
 import A1edit from '../views/functionA/A1edit'
+import A1details from '../views/functionA/A1details'
 import A2table from '../views/functionA/A2table'
 import A2add from '../views/functionA/A2add'
 import A2edit from '../views/functionA/A2edit'
@@ -66,6 +67,8 @@ export default new Router({
         { path: 'A1table', component: A1table, name: '' },
         { path: 'A1add', component: A1add, name: '' },
         { path: 'A1edit', component: A1edit, name: '' },
+        { path: 'A1details', component: A1details, name: '' },
+
         { path: 'A2table', component: A2table, name: '' },
         { path: 'A2add', component: A2add, name: '' },
         { path: 'A2edit', component: A2edit, name: '' }
