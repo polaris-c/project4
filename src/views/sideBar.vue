@@ -22,7 +22,7 @@
             </el-menu-item>
         </el-submenu>
 
-        <el-menu-item index="/functionB/table">
+        <el-menu-item index="/functionB/Btable">
             <i class="el-icon-menu"></i>
             <span slot="title">Function-B</span>
         </el-menu-item>
