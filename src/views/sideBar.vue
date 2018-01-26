@@ -33,7 +33,7 @@
                 <span>Function-C</span>
             </template>
 
-            <el-menu-item index="/functionA/A1table">
+            <el-menu-item index="/functionC/C1table">
                 <i class="el-icon-setting" aria-hidden="true"></i>
                 <span>C-1</span>
             </el-menu-item>
@@ -44,12 +44,12 @@
                     <span>C-2</span>
                 </template>  
 
-                <el-menu-item index="3-2-1">
+                <el-menu-item index="/functionC/C2aTable">
                     <i class="el-icon-d-arrow-right"></i>
                     <span>C-2-a</span> 
                 </el-menu-item>
 
-                <el-menu-item index="3-2-2">
+                <el-menu-item index="/functionC/C2bTable">
                     <i class="el-icon-d-arrow-right"></i>
                     <span>C-2-b</span>
                 </el-menu-item>                    
