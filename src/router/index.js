@@ -16,7 +16,10 @@ import A2table from '../views/functionA/A2table'
 import A2add from '../views/functionA/A2add'
 import A2edit from '../views/functionA/A2edit'
 
-import tableB from '../views/functionB/table'
+import Btable from '../views/functionB/Btable'
+import Badd from '../views/functionB/Badd'
+import Bedit from '../views/functionB/Bedit'
+import Bdetails from '../views/functionB/Bdetails'
 
 import C1table from '../views/functionC/C1table'
 import C1add from '../views/functionC/C1add'
@@ -96,7 +99,10 @@ export default new Router({
       redirect: 'noredirect',
       component: index,
       children: [
-        { path: 'table', component: tableB, name: '' }
+        { path: 'Btable', component: Btable, name: '' },
+        { path: 'Badd', component: Badd, name: '' },
+        { path: 'Bedit', component: Bedit, name: '' },
+        { path: 'Bdetails', component: Bdetails, name: '' }
       ]
     },
     {
